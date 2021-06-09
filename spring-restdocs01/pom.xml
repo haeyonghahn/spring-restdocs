@@ -79,21 +79,21 @@
 			<version>2.0</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- restDocs -->
-		<dependency> 
+		<dependency>
 			<groupId>org.springframework.restdocs</groupId>
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 			<version>2.0.3.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- junit -->
 		<dependency>
-		    <groupId>junit</groupId>
-		    <artifactId>junit</artifactId>
-		    <version>4.13.2</version>
-		    <scope>test</scope>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
@@ -109,56 +109,59 @@
 		</resources>
 
 		<plugins>
-			<plugin> 
+			<plugin>
 				<groupId>org.asciidoctor</groupId>
 				<artifactId>asciidoctor-maven-plugin</artifactId>
 				<version>1.5.3</version>
 				<executions>
 					<execution>
 						<id>generate-docs</id>
-						<phase>prepare-package</phase> 
+						<phase>prepare-package</phase>
 						<goals>
 							<goal>process-asciidoc</goal>
 						</goals>
 						<configuration>
 							<backend>html</backend>
 							<doctype>book</doctype>
+							<attributes>
+								<snippets>${project.build.directory}/generated-snippets</snippets>
+							</attributes>
 						</configuration>
 					</execution>
 				</executions>
 				<dependencies>
-					<dependency> 
+					<dependency>
 						<groupId>org.springframework.restdocs</groupId>
 						<artifactId>spring-restdocs-asciidoctor</artifactId>
 						<version>2.0.3.RELEASE</version>
 					</dependency>
 				</dependencies>
 			</plugin>
-		
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<executions>
-			        <execution>
-			          <id>copy-resources</id>
-			          <phase>prepare-package</phase>
-			          <goals>
-			            <goal>copy-resources</goal>
-			          </goals>
-			          <configuration>
-			            <outputDirectory>
-			              ${project.build.outputDirectory}/static/docs
-			            </outputDirectory>
-			            <resources>
-			              <resource>
-			                <directory>
-			                  ${project.build.directory}/generated-docs
-			                </directory>
-			              </resource>
-			            </resources>
-			          </configuration>
-			        </execution>
-			      </executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>
+								${project.build.outputDirectory}/static/docs
+							</outputDirectory>
+							<resources>
+								<resource>
+									<directory>
+										${project.build.directory}/generated-docs
+									</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 
 			<plugin>

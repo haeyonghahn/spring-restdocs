@@ -114,3 +114,9 @@
 
 [[api-example]]
 = API Example
+
+== request
+include::{snippets}/home/http-request.adoc[]
+
+== response
+include::{snippets}/home/http-response.adoc[]
