@@ -6,5 +6,6 @@
   <packaging>pom</packaging>
   <modules>
   	<module>spring-restdocs01</module>
+  	<module>spring-restdocs02</module>
   </modules>
 </project>
