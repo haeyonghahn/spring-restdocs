@@ -1,0 +1,37 @@
+= REST API Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+:operation-curl-request-title: Example request
+:operation-http-response-title: Example response
+
+[[Test-API]]
+== show API
+=== request
+include::{snippets}/user-show/http-request.adoc[]
+
+=== request body info
+include::{snippets}/user-show/request-body.adoc[]
+
+=== response
+include::{snippets}/user-show/http-response.adoc[]
+
+=== response body info
+include::{snippets}/user-show/response-body.adoc[]
+
+== edit API
+=== request
+include::{snippets}/user-edit/http-request.adoc[]
+
+=== request body info
+include::{snippets}/user-edit/request-body.adoc[]
+
+=== response
+include::{snippets}/user-edit/http-response.adoc[]
+
+=== response body info
+include::{snippets}/user-edit/response-body.adoc[]
+
